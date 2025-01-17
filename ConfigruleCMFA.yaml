@@ -33,50 +33,43 @@ dns:
     - 112.215.203.254
 proxies:
   - name: AKUN1
-    server: quiz.int.vidio.com
-    port: 80
-    type: vmess
-    uuid: 396415b0-6f7d-4df3-9d50-1a3ff9115b1a
-    alterId: 0
-    cipher: auto
-    tls: false
+    server: 104.26.7.171
+    port: 443
+    type: trojan
+    password: c7a28a0d-7d40-4655-a75b-7feb0e37205c
     skip-cert-verify: true
-    servername: id2-ray.ipservers.xyz
+    sni: ip.swdstore.xyz
     network: ws
     ws-opts:
-      path: /JAGOANSSH/
+      path: /ID4
       headers:
-        Host: id2-ray.ipservers.xyz
+        Host: ip.swdstore.xyz
     udp: true
   - name: AKUN2
-    server: quiz.int.vidio.com
+    server: 104.26.7.171
     port: 443
-    type: vless
-    uuid: 9cf9a9b0-2e2e-45bd-ac6f-5eaa44e30cfe
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: id1vless.ipservers.xyz
-    network: ws
-    ws-opts:
-      path: /jagoanssh
-      headers:
-        Host: id1vless.ipservers.xyz
+    type: trojan
+    password: 6d179b59-9321-4d8a-b506-5f500702ac6b
     udp: true
-  - name: AKUN3
-    server: quiz.int.vidio.com
-    port: 443
-    type: vless
-    uuid: aae98731-898a-4cd3-8c7f-d09af2387d63
-    cipher: auto
-    tls: true
     skip-cert-verify: true
-    servername: id2vless.ipservers.xyz
     network: ws
+    sni: ip.swdstore.xyz
     ws-opts:
-      path: /jagoanssh
+      path: /ID1
       headers:
-        Host: id2vless.ipservers.xyz
+        Host: ip.swdstore.xyz
+  - name:  AKUN3
+    server: 104.26.7.171
+    port: 443
+    type: trojan
+    password: SWDXVPN-XXXNXX-XXX
+    skip-cert-verify: true
+    network: ws
+    sni: trojan.swdvpn.web.id
+    ws-opts:
+      path: /trojan=43.134.34.18=443
+      headers:
+        Host: trojan.swdvpn.web.id
     udp: true
 
 proxy-groups:
@@ -87,7 +80,6 @@ proxy-groups:
     proxies:
       - AKUN1
       - AKUN2
-      - AKUN3
 
   - name: MIX-X
     type: fallback
